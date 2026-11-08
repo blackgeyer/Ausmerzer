@@ -1,0 +1,24 @@
+name: Ausmerzer
+description: Sanitizes your server from modern Minecraft-PVP heresy.
+version: 1.0.0
+main: org.blackgeyer.ausmerzer.Ausmerzer
+api-version: "1.21.11"
+authors: [blackgeyer/blackgeier]
+folia-supported: true
+
+commands:
+  asm:
+    description: Ausmerzer management
+    usage: "/asm <reload>"
+
+  permissions:
+    asm.use:
+      description: Allows to reload Ausmerzer
+      default: op
+
+    asm.bypass:
+      description: Allows you to possess a prohibited item
+      default: false
+
+
+

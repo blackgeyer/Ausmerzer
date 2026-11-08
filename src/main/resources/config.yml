@@ -1,0 +1,42 @@
+# Damage restriction. Format: "TYPE:MAX_DAMAGE"
+# damage-mode:
+#   RAW   - RAW explosion damage (before armor/effects); player will take less due to armor
+#   FINAL - FINAL damage (after armor/effects); this is the maximum health the player will lose
+# Supported: TNT, TNT_MINECART, END_CRYSTAL (or ENDER_CRYSTAL),
+#            RESPAWN_ANCHOR, BED (or any *_BED, e.g. RED_BED), FIREWORK_ROCKET
+# Items themselves are not banned here — only damage is nerfed. Bans: itemban section.
+explosive-nerfs:
+  is-enabled: true
+  damage-mode: RAW
+  nerfed: []
+    # Write like this:
+    # "ENDER_CRYSTAL:15.0"
+    # "RESPAWN_ANCHOR:12.0"
+
+# Material names, e.g.: TOTEM_OF_UNDYING
+itemban:
+  is-enabled: true
+  banned-items: []
+
+# Either result Material ("MACE"), or recipe key ("minecraft:mace")
+recipeban:
+  is-enabled: true
+  banned-recipes: []
+
+# Write the keys here, just as you would in explosion-nerfs (e.g NETHERITE_SWORD:1.0)
+nerf-item-damage:
+  is-enabled: true
+  damage-mode: RAW     
+  nerfed-items: []
+
+
+item-clear-notify:
+  is-enabled: true
+  notify-msg: "<red>%banned% item is banned."
+
+messages:
+  no-permission: "<red>Access denied."
+  invalid: "<yellow>Invalid command. Usage: /asm reload"
+  reload-scf: "<green>Configuration reload was successful."
+  reload-fail: "<red>Configuration reload failed. Check the console for details."
+  reload-with-errors: "<yellow>Configuration reload executed but with errors. Check the console for details."
